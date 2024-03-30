@@ -6,14 +6,13 @@ Capstone Project --- `finance_calculators.py`
 import math
 import os
 
-#----------------------------------------------------------------------#
+
 '''
 Clears terminal on various OS.
 '''
 def clear_screen():
     os.system('cls||clear')
 
-#----------------------------------------------------------------------#
 '''
 Only known error that can occur is caused by an incorrect user input.
 '''
@@ -21,11 +20,10 @@ def display_error():
     clear_screen()
     print("Error: Invalid input. Please try again.\n\n")
 
-#----------------------------------------------------------------------#
 
 def input_and_check_float(display_str):
     '''
-    Repeatedly requests an input until the input string can be 
+    Repeatedly requests an input until the input string can be
     converted to a float. Display an error each time the string is
     invalid.
     '''
@@ -39,7 +37,6 @@ def input_and_check_float(display_str):
             print("unknown error")
 
 
-#----------------------------------------------------------------------#
 def user_inputs(input_stage):
     '''
     Print a specific message to the console and/or request specific user
@@ -61,7 +58,7 @@ def user_inputs(input_stage):
                 return program
             else:
                 display_error()
-    
+
     elif input_stage == "select investment type":
         while True:
             print("Please select the type of investment.")
@@ -71,7 +68,7 @@ def user_inputs(input_stage):
             else:
                 display_error()
 
-    elif input_stage == "investment values":   
+    elif input_stage == "investment values":
         deposit = input_and_check_float(
             "Please enter the amount of money you will deposit (£): ")
         inv_rate = input_and_check_float(
@@ -79,7 +76,7 @@ def user_inputs(input_stage):
         years = input_and_check_float(
             "Please enter the length of your investment (years): ")
         return deposit, inv_rate, years
-    
+
     elif input_stage == "bond values":
         house_value = input_and_check_float(
             "Please input the current value of the house (£): ")
@@ -92,8 +89,7 @@ def user_inputs(input_stage):
 
     else: return None
 
-#----------------------------------------------------------------------#
-''' 
+'''
 Interest calculations.
 '''
 def calc_simple_interest(P, r, t):
@@ -106,11 +102,10 @@ Bond calculation.
 def calc_bond_repayment(P, i, n):
     return (i * P)/(1 - math.pow(1 + i,-n))
 
-#----------------------------------------------------------------------#
 def investment_main():
     '''
     If "investment" is selected, run this function.
-     - Takes user input of the properties of their investment. 
+     - Takes user input of the properties of their investment.
      - Calculates final value of their investment using either
         simple or compound interest (user determined).
      - Displays a summary.
@@ -132,11 +127,10 @@ def investment_main():
     print(f"Length of investment: {years} years")
     print(f"Total value at the end of your investment: £{total}")
 
-#----------------------------------------------------------------------#
 def bond_main():
     '''
     If "bond" is selected, run this function.
-     - Takes user input of the properties of their bond. 
+     - Takes user input of the properties of their bond.
      - Calculates the monthly cost of repaying the bond.
      - Displays a summary.
     '''
@@ -145,18 +139,17 @@ def bond_main():
     monthly_bond_rate = bond_rate/1200 # annual (%) -> monthly (decimal)
     monthly_repayment = calc_bond_repayment(
         house_value, monthly_bond_rate, months)
-    
+
     clear_screen()
     print(f"The present value of the house: £{house_value}")
     print(f"The interest rate: {bond_rate}%")
     print(f"Repayment time: {months} months")
     print(f"Calculated monthly repayment: £{monthly_repayment}")
 
-#----------------------------------------------------------------------#
 '''
-Main program 
+Main program
     This file contains two programs, `investment_main()` and
-    `bond_main()`, which function as different investment/loan 
+    `bond_main()`, which function as different investment/loan
     calculators.
     This main script takes a user input to select the desired program
     and run it.
