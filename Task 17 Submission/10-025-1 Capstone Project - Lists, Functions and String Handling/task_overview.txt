@@ -1,9 +1,0 @@
-`task_manager.py` - Task Overview
------------------------------------------
-Total Tasks:						7
-Complete tasks:						5
-Incomplete tasks:					2
-Overdue tasks:						1
-Percentage of tasks incomplete:		28%
-Percentage of tasks overdue:		14%
-
