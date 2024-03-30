@@ -1,0 +1,15 @@
+admin;password
+bob;dylan
+gregg;bodd
+asoo;moc
+a;a
+goat;goat
+YO;YO
+greggo;crum
+gogo;go
+grop;poo
+h;h
+pooster;poo
+bozo;bozo
+beans;beans
+crum;crum
