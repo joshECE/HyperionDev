@@ -1,4 +1,5 @@
 '''
+Task 11:
 Practical Task 1 --- `alternate.py`
 
 '''
@@ -26,6 +27,12 @@ for i in range(len(output_string2)):
         output_string2[i] = output_string2[i].upper()
 output_string2 = " ".join(output_string2)
 
+# Split the input string into words and reverse the order of the words
+output_string3 = input_string.split()
+output_string3 = output_string3[::-1]
+output_string3 = " ".join(output_string3)
+
 # Display the results
-print(output_string1)
-print(output_string2)
+print(f"Output string 1: {output_string1}")
+print(f"Output string 2: {output_string2}")
+print(f"Output string 3: {output_string3}")
